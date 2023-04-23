@@ -177,3 +177,21 @@ app.delete('/api/products/:id', (req, res) => {
 app.listen(3000, () => {
     console.log('Server started on port 3000');
 });
+@Entity
+@Table(name = "products")
+public class Product {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+
+    @Column(name = "name")
+    private String name;
+
+    @Column(name = "price")
+    private BigDecimal price;
+
+    @Column(name = "description")
+    private String description;
+
+    @Column(name = "image_url");
